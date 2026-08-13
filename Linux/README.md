@@ -14,5 +14,5 @@ Here I will show my understanding of basic command for the CLI in Linux.
 ## Operators
 - & - Runs a command in the background, will not wait for completion before you can do anything else.
 - && - Run 2 commands, but waits for the first to finish before starting the second.
-- > - Sends the output somewhere else. e.g echo "test" > testscript will put test in the file testscript. NOTE: This will override anything already in the file
+- > - Sends the output somewhere else. e.g echo "test" > testscript will put test in the file testscript. NOTE: This will override anything already in the file.
 - >> - Adds the output to the bottom line of the file.
