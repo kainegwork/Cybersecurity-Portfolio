@@ -1,4 +1,4 @@
-##Powershell
+#Powershell
 Commands in powershell are called cmdlets. They use a Verb-Noun naming convention to make them easy to understand.
 - Get-Command shows all cmdlets, functions, etc. avaliable in powershell.
 - Get-Help shows details of what a cmdlet does. The -examples appendix will give some general examples for the cmdlet.
