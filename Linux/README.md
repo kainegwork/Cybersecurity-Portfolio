@@ -30,7 +30,8 @@ Here I will show my understanding of basic command for the CLI in Linux.
   top shows real-time statistics about processes that are running.
 - systemctl
   allows us to interact with the systemd process. Formatting: systemctl [option] [service]
-  Options are: Start, Stop, Enable, Disable, Status
+  Options are: Start, Stop, Enable, Disable, Status.
+- grep - used to find strings of text in documents.
 ## Operators
 - & - Runs a command in the background, will not wait for completion before you can do anything else.
 - && - Run 2 commands, but waits for the first to finish before starting the second.
@@ -55,5 +56,13 @@ Many Linux commands use numeric values.
 ## Backgrounding and Foregrounding
 We can background a process by following it with the & operator or by pressing Ctrl+Z
 We can then foreground the process again using fg
+
+## Scripting in shells
+A script is just a set of commands. It must have the extension .sh for bash scripts.
+Every script should start from shebang. Shebang is #! followed by the interpretor (bash,fish,etc).
+A script must have execution permissions, use chmod +x scriptname.
+use ./ before the script name to run it
+Loops and conditions can be used in scripts.
+Comment using '#' followed by text.
 
 
