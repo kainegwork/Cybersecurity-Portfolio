@@ -1,4 +1,4 @@
-#Powershell
+# Powershell
 Commands in powershell are called cmdlets. They use a Verb-Noun naming convention to make them easy to understand.
 - Get-Command shows all cmdlets, functions, etc. avaliable in powershell.
 - Get-Help shows details of what a cmdlet does. The -examples appendix will give some general examples for the cmdlet.
@@ -10,7 +10,7 @@ Commands in powershell are called cmdlets. They use a Verb-Noun naming conventio
 - Remove-Item, Copy-Item, Move-Item are all self explanatory based on above.
 - Get-Content works the same as type in CLI.
 
-##Piping
+# #Piping
 Piping (denoted by |) is used to pass the output of one cmdlet to another. This is especially powerful in powershell as it passes the objects instead of just text.
 - Where-Object can filter outputs that meet certain criteria.
 - ne: "not equal". This operator can be used to exclude objects from the results based on specified criteria.
