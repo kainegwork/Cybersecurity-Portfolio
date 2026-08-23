@@ -1,7 +1,7 @@
 ## Helpdesk
 This section documents my development of practical IT support and helpdesk skills.
 The focus is on handling technical problems in a structured way:
-* Gathering the right infomation
+* Gathering the right information
 * Working out what is most likely causing the issue.
 * Recording the troubleshooting steps and explaining the resolution clearly.
 
@@ -20,8 +20,8 @@ The focus is on handling technical problems in a structured way:
 - Hardware and software issues
 
 ## Troubleshooting approach
-When troubleshooting and issue I aim to:
-1. Understand the issue from the users perspective.
+When troubleshooting an issue I aim to:
+1. Understand the issue from the user's perspective.
 2. Establish the impact and urgency.
 3. Gather relevant information.
 4. Reproduce the issue where possible.
