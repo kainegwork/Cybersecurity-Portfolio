@@ -184,24 +184,26 @@ System performance was tested again, and the user confirmed that they could comp
 
 ---
 
-## Ticket 006 - Slow Internet speeds on certain devices in network.
+## Ticket 006 - Slow Internet Speed on Some Devices.
 
 **Priority:** P3 - Medium
 
 ### Problem
-User noticed that some devices on a network were receiving a lower internet speed than others.
+User reported that some devices on the home network were receiving significantly lower internet speeds than others.
 
 ### Troubleshooting
 1. Confirmed that all devices were connected to the same network.
 2. Ran a speed test on the slower devices, result 40Mbps download speed.
 3. Ran a speed test on the faster devices, result 400+Mbps download speed.
-4. Knowing that 2.4Ghz bands cap at 40Mbps, assumed there was a problem switching between the 2.4Ghz and 5Ghz bands automatically for some devices.
-5. Tried restarting the router, no success.
-6. Went into router settings and split the 2.4Ghz and 5Ghz bands onto separate networks.
+4. The slower devices appeared to be using the 2.4Ghz band, suggesting that these devices were not automatically connecting to the optimal band.
+5. Tried restarting the router to rule out a temporary network issue, this did not resolve the problem.
+6. Went into router settings and split the 2.4Ghz and 5Ghz bands onto separate networks so the user could manually select which band to use on which devices.
 
 ### Resolution
 
 Connecting the slower device to the 5Ghz network then gave download speeds of 400+Mbps similar to the other devices. User now has 2 networks so they can split devices based on their needs.
+
+**Lessons Learned:** Separating the wireless bands made it possible to identify which band each device was using and gave greater control over the network configuration. This reinforced the importance of testing individual network variables rather than assuming the router or internet connection was the cause.
 
 ### Verification
 
