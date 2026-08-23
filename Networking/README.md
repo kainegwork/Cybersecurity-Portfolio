@@ -32,3 +32,6 @@ A few examples of DNS records are:
 * MX records used by mail servers.
 
 **WHOIS** can be used to look up the domain owner and the creation date of any domain. **Note:** Some domains can be created through a service that will redact personal information from the WHOIS records.
+
+Telnet: telnet <ipaddress> <port>
+Then use /GET /(filename) /HTTP/1.1
