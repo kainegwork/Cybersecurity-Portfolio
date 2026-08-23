@@ -1,9 +1,9 @@
 ## Helpdesk
 This section documents my development of practical IT support and helpdesk skills.
 The focus is on handling technical problems in a structured way:
-Gathering the right infomation
-Working out what is most likely causing the issue.
-Recording the troubleshooting steps and explaining the resolution clearly.
+* Gathering the right infomation
+* Working out what is most likely causing the issue.
+* Recording the troubleshooting steps and explaining the resolution clearly.
 
 ---
 
