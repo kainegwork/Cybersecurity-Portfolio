@@ -1,7 +1,7 @@
 #OSI Model
 
-|Layer  |Number |Layer Name|Main Function|Example Protocols and Standards|
-|---|---|---|---|---|
+|Layer Number |Layer Name|Main Function|Example Protocols and Standards|
+|---|---|---|---|
 |Layer 7 |	Application layer |	Providing services and interfaces to applications |	HTTP, FTP, DNS, POP3, SMTP, IMAP|
 |Layer 6 |	Presentation layer |	Data encoding, encryption, and compression |	Unicode, MIME, JPEG, PNG, MPEG|
 |Layer 5 |	Session layer |	Establishing, maintaining, and synchronising sessions |	NFS, RPC|
