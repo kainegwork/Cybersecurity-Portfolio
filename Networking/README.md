@@ -22,3 +22,13 @@ ICMP is mainly used for network diagnostics and error reporting. Two popular com
 
 ### NAT (Network Address Translation)
 NAT was a proposed way to overcome the limits of IPv4 by using a public IP address to provide internet to many private IP addresses.
+
+### DNS
+Domain Name Sysytem (DNS) is partly responsible for mapping a domain name to an IP address. It works at Layer 7 of the OSI Model.
+A few examples of DNS records are:
+* A records
+* AAAA records (for IPv6)
+* CNAME records, which map domain names to other domain names
+* MX records used by mail servers.
+
+**WHOIS** can be used to look up the domain owner and the creation date of any domain. **Note:** Some domains can be created through a service that will redact personal information from the WHOIS records.
