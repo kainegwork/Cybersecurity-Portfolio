@@ -23,26 +23,24 @@ Useful questions include:
 Next, determine how widely the issue is affecting the business.
 
 For example, it may affect:
-
-One user
-Several users
-A single department
-The entire organisation
+- One user
+- Several users
+- A single department
+- The entire organisation
 
 If multiple users are affected, the problem may be related to a wider infrastructure or service issue rather than an individual device.
 
 3. Gather Information
 
 Collect the technical details needed to investigate the problem, including:
-
-Device
-Operating system
-Username or account
-Application
-Network connection
-Error messages
-Recent changes
-Approximate time the issue began
+- Device
+- Operating system
+- Username or account
+- Application
+- Network connection
+- Error messages
+- Recent changes
+- Approximate time the issue began
 
 4. Isolate the Problem
 
