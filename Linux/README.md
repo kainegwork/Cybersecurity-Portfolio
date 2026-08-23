@@ -2,7 +2,11 @@
 Here I will show my understanding of basic command for the CLI in Linux.
 
 ## Basic commands
-- whoami - Tells you who you are on the system.
+```bash
+whoami
+```
+- Tells you who you are on the system.
+'''
 - echo - Terminal will output desired text.
 - ls - Tells me what directories are around me.
 - cd - Change directories
