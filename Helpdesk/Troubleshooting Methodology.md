@@ -43,6 +43,7 @@ Network connection
 Error messages
 Recent changes
 Approximate time the issue began
+
 4. Isolate the Problem
 
 Identify which part of the system may be causing the issue.
