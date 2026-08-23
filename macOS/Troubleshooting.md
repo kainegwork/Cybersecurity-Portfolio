@@ -28,25 +28,25 @@ If an application will not open, I would work through the following checks:
 
 ## Wi-Fi Problems
 
-A straightforward troubleshooting sequence is:
+A straightforward troubleshooting sequence would be:
 
-```text
+
 Confirm Wi-Fi is enabled
-↓
+->
 Confirm the correct network is selected
-↓
+->
 Check the connection status
-↓
+->
 Check the IP configuration
-↓
+->
 Test the local gateway
-↓
+->
 Test external connectivity
-↓
+->
 Test DNS resolution
-↓
+->
 Test the required application or service
-```
+
 
 ## Performance Problems
 
