@@ -46,7 +46,29 @@ Example commands:
     - STOR to upload a file to the FTP server.
 FTP servers listen to TCP port 21 by default.
 
-Here is an example from a Tryhackem room of me downloading a file with FTP:
+Here is an example from a Tryhackme room of me downloading a file with FTP:
 ![FTP login and file retrieval](images/ftp_anonymous_login.png)
 
+**SMTP (Simple Mail Transfer Protocol)**
+SMTP defines how a mail client talks to a mail server and how mail servers talk to each other.
+Example commands:
+    - HELO or EHLO initiates an SMTP session.
+    - MAIL FROM specifies the senders email address.
+    - RCPT TO specifies the recipients email address.
+    - DATA indicates that the client will begin sending the content of the email.
+    - . is sent by itself to show the end of the message.
+SMTP servers listen to TCP port 25 by default.
 
+**POP3 (The Post Office Protocol version 3)**
+POP3 is designed to allow a mail client to communicate with a mail server and retrieve email messages.
+Commom commands:
+    - USER <username> identifies the user.
+    - PASS <password> gives the password.
+    - STAT requests the number of messages and the total size.
+    - LIST lists the messages and their sizes.
+    - RETR <message_number> gets a specific message.
+    - DELE <message_number> marks a message for deletion.
+    - QUIT ends the POP3 session applying changes, i.e. deletions.
+The POP3 server listen on port 110 by default.
+
+![Example of using POP3 over Telnet to retrieve an email](images/pop3_telnet.png)
