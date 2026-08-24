@@ -33,5 +33,17 @@ A few examples of DNS records are:
 
 **WHOIS** can be used to look up the domain owner and the creation date of any domain. **Note:** Some domains can be created through a service that will redact personal information from the WHOIS records.
 
+**HTTP** Designed for retrieving web pages, what browser applications use.
 Telnet: telnet <ipaddress> <port>
 Then use /GET /(filename) /HTTP/1.1
+
+**FTP (File Transfer Protocol)**
+FTP is designed to transfer files.
+Example commands:
+    - USER to input the username
+    - PASS to enter the password
+    - RETR to download a file from the FTP server
+    - STOR to upload a file to the FTP server
+FTP servers listen to TCP port 21 by default.
+
+
