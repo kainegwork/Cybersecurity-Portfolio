@@ -40,10 +40,13 @@ Then use /GET /(filename) /HTTP/1.1
 **FTP (File Transfer Protocol)**
 FTP is designed to transfer files.
 Example commands:
-    - USER to input the username
-    - PASS to enter the password
-    - RETR to download a file from the FTP server
-    - STOR to upload a file to the FTP server
+    - USER to input the username.
+    - PASS to enter the password.
+    - RETR to download a file from the FTP server.
+    - STOR to upload a file to the FTP server.
 FTP servers listen to TCP port 21 by default.
+
+Here is an example from a Tryhackem room of me downloading a file with FTP:
+![FTP login and file retrieval](images/ftp_anonymous_login.png)
 
 
