@@ -1,3 +1,4 @@
+# Networking Core Protocols
 ## OSI Model
 
 |Layer Number |Layer Name|Main Function|Example Protocols and Standards|
@@ -33,9 +34,13 @@ A few examples of DNS records are:
 
 **WHOIS** can be used to look up the domain owner and the creation date of any domain. **Note:** Some domains can be created through a service that will redact personal information from the WHOIS records.
 
-**HTTP** Designed for retrieving web pages, what browser applications use.
-Telnet: telnet <ipaddress> <port>
+**HTTP** 
+Designed for retrieving web pages, what browser applications use.
+Relies on TCP and uses port 80 by default.
+
+**Telnet:** telnet <ipaddress> <port>
 Then use /GET /(filename) /HTTP/1.1
+Telnet's default is port 23.
 
 **FTP (File Transfer Protocol)**
 FTP is designed to transfer files.
@@ -72,3 +77,47 @@ Commom commands:
 The POP3 server listen on port 110 by default.
 
 ![Example of using POP3 over Telnet to retrieve an email](images/pop3_telnet.png)
+
+### IMAP (Internet Message Access Protocol)
+IMAP allows sychronizing read, moved and deleted messages.
+A few example commands (slightly more complicated than POP3):
+    - LOGIN <username> <password> authenticates the user
+    - SELECT <mailbox> selects the mailbox folder to work with
+    - FETCH <mail_number> <data_item_name> Example fetch 3 body[] to fetch message number 3, header         and body.
+    - MOVE <sequence_set> <mailbox> moves the specified messages to another mailbox
+    - COPY <sequence_set> <data_item_name> copies the specified messages to another mailbox
+    - LOGOUT logs out
+IMAP server listens to Port 143 by default.
+
+# Networking Secure Protocols
+The above protocols do not protect the confidentiality, integrity or authenticity of the data that is sent over them. **Transport Layer Security (TLS)** is added to existing protocols to protect the CIA triad.
+
+## TLS
+TLS allows secure communication between devices over an insecure network. 
+A server or client needs a signed TLS certificate to be trusted as secure.
+
+### HTTPS
+HTTPS works similarly to HTTP but a TLS session is established after the TCP three-way handshake.
+After this, all of the data in the packets appears as giberish if intercepted, unless you have the encryption key.
+
+### SMTPS, POP3S, IMAPS
+These all work in the same way as HTTPS did over TLS.
+|---|---|
+|**Protocol**|**Default Port Number**|
+|HTTPS|443|
+|SMTPS|465 or 587|
+|POP3S|995|
+|IMAPS|993|
+
+## SSH
+Telnet is risky as all the traffic is sent in cleartext. 
+SSH offers confidentiality, integrity along with other benefits of having the traffic encrypted.
+Use the command ```bash ssh username@hostname ``` to connect to an SSH server. You will then be asked for a password, unless the server uses public-key authentication.
+The SSH server listens on port 22.
+
+### SFTP
+SFTP or SSH File Transfer Protocol allows secure file transfer. It can be enabled in the OpenSSH server configuration and allows for commands such as ```bash get filename ``` and ```bash put filename ``` to download and upload files respectively.
+
+## VPN (Virtual Private Network)
+Can be used to connect devices in different locations as if they were physically located in the same place.
+All the internet traffic is sent from a VPN client to a VPN server, which then sends on the traffic from its IP address and back to the VPN client. This is why many people use VPN's for privacy and circumventing geographical restrictions.
