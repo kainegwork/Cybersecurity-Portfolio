@@ -16,3 +16,5 @@ Nmap labels hosts that respond to the ARP request with 'Host is up'.
 ### Scanning a "Remote" Network
 In this context "Remote" means that at least one router seperates our system from this network. Say we are on the same network as before, to scan the `192.168.11.0/24` network we would use ` nmap -sn 192.168.11.0/24`.
 Here nmap cannot use ARP so instead starts by sending ICMP echo requests.
+
+We can also use the option `-sL` to just give us a list of all the targets without actually scanning them.
