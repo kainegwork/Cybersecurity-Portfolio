@@ -35,5 +35,47 @@ An example would be `tcpdump -i ens5 icmp -n`.
 
 ### Logical Operators
 * `and`: Captures packets where both conditions are true. For example, `tcpdump host 1.1.1.1 and tcp` captures tcp traffic with host 1.1.1.1.
-* `or`: Captures packets when either one of the conditions is true. For instance, `tcpdump udp or icmp` captures or ICMP traffic.
+* `or`: Captures packets when either one of the conditions is true. For instance, `tcpdump udp or icmp` captures udp or ICMP traffic.
 * `not`: Captures packets when the condition is not true. For example, `tcpdump not tcp` captures all packets except segments; we expect to find UDP, ICMP, and ARP packets among the results.
+
+## Advanced Filtering
+In real life we may need to filter through thousands or even millions of packets, so we need to be able to look at exactly the packets we want.
+We can filter packets that are longer or shorter than a certain length using:
+* `greater LENGTH`: Filters packets that are greater than or equal to the length.
+* `less LENGTH`: Filter packets that are less then or equal to the length.
+
+### Binary Operations
+A binary operation takes one or two bits and returns one bit. Lets consider the operations `&`,`|` and `!`.
+
+`&` takes two bits and returns 0 unless both inputs are 1.
+`|` (Or) takes two bits and returns 1 unless both inputs are 0.
+`!` (Not) takes one bit and inverts it.
+
+### Header Bytes
+
+Using `pcap-filter` Tcpdump allows us to refer to the contents of any byte in the header using the syntax `proto[expr;size]`, where:
+* `proto` refers to the protocol. e.g. arp, ip, etc.
+* `expr` indicates the byte offset, where `0` refers to the first byte.
+* `size` indicates the number of bytes that we are interested in, 1,2, or 4, and is at 1 by default.
+
+## Displaying Packets
+
+### Brief Packet Information
+
+Shorter packet outputs can be printed using the `-q` option.
+
+### Display Link Level Header
+
+If we are on Ethernet or Wifi and want to include the MAC addresses in the output, we just need to add `-e`.
+
+### Display Packets as ASCII
+
+WE can use `-A` to map all of the bytes to ASCII.
+
+### Diplay Packets in Hexadecimal Format
+
+We can display the packet in hexadecimal format using `-xx`. This is helpful if the packet contents is not in plain-text English or has undergone encryption or compression.
+
+### Best of Both
+
+We can also use `-X` to display the packets in both hexadecimal and ASCII format.
