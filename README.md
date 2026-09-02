@@ -1,96 +1,85 @@
 # IT Support & Cybersecurity Portfolio
+
 Hi, I'm Kaine.
-I am currently developing practical IT Support and cybersecurity skills. I am focusing on troubleshooting, networking, Windows, Linux, macOS and security fundamentals.
-My aim is to build string IT support experience whilst continuing to develop towards a career in cybersecurity.
+
+I'm developing practical IT support and cybersecurity skills through hands-on labs, troubleshooting exercises and independent projects.
+
+My current focus is Linux, Windows, networking, technical troubleshooting and security fundamentals, with the goal of beginning my career in IT support or cybersecurity and continuing to develop towards a security-focused role.
+
+This portfolio documents my practical work, troubleshooting methodology and technical development.
 
 ## Technical Skills
-- Windows
-- Linux
-- macOS - currently developing practical support knowledge
 
-## IT Support
-- Technical Troubleshooting
-- Incident Investigation
-- Ticket Documentation
-- Ticket prioritisation and triage
-- Hardware and software troubleshooting.
-- User support
-- Problem solving and escalation
+- **Linux:** Command line, file systems, permissions, users and groups, processes, services, SSH and network troubleshooting
+- **Windows:** Command line, PowerShell fundamentals, system administration, NTFS permissions, User Account Control and troubleshooting
+- **Networking:** TCP/IP, IPv4/IPv6, DNS, DHCP, ARP, ICMP, routing and network troubleshooting
+- **IT Support:** Troubleshooting methodology, ticket documentation, prioritisation, escalation and user support
+- **Security:** Authentication and access control, security fundamentals and introductory network/security analysis
+- **macOS:** Developing practical support and troubleshooting knowledge
 
-## Networking
-- TCP/IP
-- OSI
-- IPv4
-- DNS
-- DHCP
-- NAT
-- ARP
-- ICMP
-- Wi-Fi
-- Basic network troubleshooting
+## Featured Projects
 
-## Windows
-- Windows command line
-- Powershell fundamentals
-- Windows system administration fundamentals
-- NTFS and permissons
-- User Account Control
-- Process and network troubleshooting
+### [Linux Network Troubleshooting Lab](Linux/Linux-Network-Troubleshooting/)
+Investigated a real network connectivity issue using interface configuration, routing tables, DNS resolution, IPv4/IPv6 testing and traceroute. Isolated the issue to external IPv6 connectivity while confirming that local networking, DNS and IPv4 connectivity were operational.
 
-## Linux
-- Linux command line
-- File systems
-- Permissions
-- Processes
-- Bash fundamentals
-- SSH
+### [Linux Process & Service Troubleshooting](Linux/Linux-Process-Service-Troubleshooting/)
+Investigated Linux processes and systemd services, identified and terminated a high-CPU process, and installed and configured OpenSSH Server using socket-based activation.
 
-## Cybersecurity
-- Securtiy fundamentals
-- Authentication and access control
-- Network security concepts
-- Linux security fundamentals
-- Windows security fundamentals
-- Cybersecurity labs through Tryhackme
+### [Linux Permissions Lab](Linux/Linux-Permissions-Lab/)
+Practised Linux user, group and file permission administration, including shared directories, group ownership, setgid and least-privilege access.
 
-## Portfolio
-Helpdesk
-Practical examples of troubleshooting, ticket prioritisation, documentation and incident resolution.
+### [External Linux Mint Workstation](Linux/External-Linux-Mint-Workstation/)
+Built a persistent Linux Mint workstation on an external SSD alongside an existing Windows installation. Configured partitioning, EFI/GRUB boot files and shared storage, and troubleshot UEFI boot issues to create a reliable portable Linux environment.
 
-Windows
-Windows administriation and troubleshooting notes, including PowerShell.
+## Portfolio Areas
 
-macOS
-Practical macOS troubleshooting knowledge and troubleshooting procedures.
+### [Helpdesk](Helpdesk/)
+Practical troubleshooting, ticket documentation, prioritisation, escalation and incident resolution exercises.
 
-Networking
-Networking fundamentals and practical troubleshooting methods.
+### [Linux](Linux/)
+Linux administration, command-line skills, permissions, processes, services, networking and troubleshooting projects.
 
-Linux
-Linux command-line knowledge, permissions, processes and administration fundamentals.
+### [Networking](Networking/)
+Networking fundamentals and practical work covering TCP/IP, DNS, DHCP, ARP, ICMP and network troubleshooting.
 
-Cybersecurity
-Cybersecurity learning, labs and practical security exercises.
+### [Windows](Windows/)
+Windows administration and troubleshooting, including command-line tools, PowerShell and system fundamentals.
 
-## Platforms
-- Tryhackme
-- Cisco
+### [macOS](macOS/)
+Developing practical macOS support knowledge and troubleshooting procedures.
+
+### [Cybersecurity](Cybersecurity/)
+Security fundamentals, hands-on labs and practical cybersecurity learning.
+
+## Platforms & Tools
+
+- TryHackMe
+- GitHub
+- Linux Mint
+- Windows 11
+- PowerShell
+- Wireshark
+- VirtualBox
 
 ## Current Learning
-I am currently developing my practical IT support and cybersecurity skills through hands-on labs, documentation and troubleshooting exercises.
 
-Areas I am currently focusing on:
-- IT helpdesk and troubleshooting
-- masOS support
-- Networking
-- Windows administration
-- Linux
-- Cybersecurity fundamentals
+I am currently developing my skills through:
 
-## Projects
-This portfolio is continuously updated as I complete practical labs and develop new skills.
+- Hands-on Linux administration and troubleshooting
+- TryHackMe cybersecurity labs
+- Networking and packet analysis
+- Windows and Active Directory
+- Security operations and defensive cybersecurity concepts
+- Continued development of practical IT support skills
+
+## Current Goals
+
+My immediate goal is to build the practical skills required for an entry-level IT support or cybersecurity role, while continuing to develop towards SOC Analyst and Cyber Security Analyst positions.
+
+I am particularly focused on building demonstrable experience through hands-on projects rather than relying solely on theoretical study.
 
 ## Disclaimer
-All security related activities documented in this portfolio are performed in authorised lab environments or against systems for which I have permission to test.
+
+All projects and labs in this portfolio are completed in controlled environments for educational purposes.
 
 
