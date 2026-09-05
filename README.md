@@ -14,10 +14,13 @@ This portfolio documents my practical work, troubleshooting methodology and tech
 - **Windows:** Command line, PowerShell fundamentals, system administration, NTFS permissions, User Account Control and troubleshooting
 - **Networking:** TCP/IP, IPv4/IPv6, DNS, DHCP, ARP, ICMP, routing and network troubleshooting
 - **IT Support:** Troubleshooting methodology, ticket documentation, prioritisation, escalation and user support
-- **Security:** Authentication and access control, security fundamentals and introductory network/security analysis
+- **Security:** SOC alert triage, phishing investigation, SIEM log analysis, IOC investigation, authentication, access control and network security fundamentals
 - **macOS:** Developing practical support and troubleshooting knowledge
 
 ## Featured Projects
+
+### [Phishing SOC Simulator Investigation](Cybersecurity/SOC-Labs/Phishing-SOC-Simulator/)
+Investigated and triaged five security alerts in a simulated SOC environment. Analysed suspicious emails and SIEM logs, investigated URLs and IP addresses using TryDetectMe, distinguished true positives from false positives, and escalated suspicious activity based on the available evidence.
 
 ### [Linux Network Troubleshooting Lab](Linux/Linux-Network-Troubleshooting/)
 Investigated a real network connectivity issue using interface configuration, routing tables, DNS resolution, IPv4/IPv6 testing and traceroute. Isolated the issue to external IPv6 connectivity while confirming that local networking, DNS and IPv4 connectivity were operational.
@@ -49,7 +52,7 @@ Windows administration and troubleshooting, including command-line tools, PowerS
 Developing practical macOS support knowledge and troubleshooting procedures.
 
 ### [Cybersecurity](Cybersecurity/)
-Security fundamentals, hands-on labs and practical cybersecurity learning.
+SOC investigations, security alert triage, phishing analysis, SIEM log analysis and other hands-on cybersecurity labs.
 
 ## Platforms & Tools
 
@@ -60,6 +63,8 @@ Security fundamentals, hands-on labs and practical cybersecurity learning.
 - PowerShell
 - Wireshark
 - VirtualBox
+- TryDetectMe
+- SIEM platforms
 
 ## Current Learning
 
