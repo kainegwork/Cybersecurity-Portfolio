@@ -14,13 +14,16 @@ This portfolio documents my practical work, troubleshooting methodology and tech
 - **Windows:** Command line, PowerShell fundamentals, system administration, NTFS permissions, User Account Control and troubleshooting
 - **Networking:** TCP/IP, IPv4/IPv6, DNS, DHCP, ARP, ICMP, routing and network troubleshooting
 - **IT Support:** Troubleshooting methodology, ticket documentation, prioritisation, escalation and user support
-- **Security:** SOC alert triage, phishing investigation, SIEM log analysis, IOC investigation, authentication, access control and network security fundamentals
+- **Security:** SOC alert triage, phishing investigation, SIEM log analysis, IOC investigation, Metasploit, Meterpreter, post-exploitation fundamentals, authentication, access control and network security fundamentals
 - **macOS:** Developing practical support and troubleshooting knowledge
 
 ## Featured Projects
 
 ### [Phishing SOC Simulator Investigation](Cybersecurity/SOC-Labs/Phishing-SOC-Simulator/)
 Investigated and triaged five security alerts in a simulated SOC environment. Analysed suspicious emails and SIEM logs, investigated URLs and IP addresses using TryDetectMe, distinguished true positives from false positives, and escalated suspicious activity based on the available evidence.
+
+### [Metasploit Exploitation & Meterpreter Lab](Cybersecurity/Offensive-Security/Metasploit-Exploitation/)
+Used the Metasploit Framework in a controlled TryHackMe environment to generate and execute a Linux Meterpreter reverse TCP payload, configure a handler, establish a Meterpreter session and run a post-exploitation hashdump module. Troubleshot repeated session termination and identified the lab environment reset as the cause.
 
 ### [Linux Network Troubleshooting Lab](Linux/Linux-Network-Troubleshooting/)
 Investigated a real network connectivity issue using interface configuration, routing tables, DNS resolution, IPv4/IPv6 testing and traceroute. Isolated the issue to external IPv6 connectivity while confirming that local networking, DNS and IPv4 connectivity were operational.
@@ -52,7 +55,7 @@ Windows administration and troubleshooting, including command-line tools, PowerS
 Developing practical macOS support knowledge and troubleshooting procedures.
 
 ### [Cybersecurity](Cybersecurity/)
-SOC investigations, security alert triage, phishing analysis, SIEM log analysis and other hands-on cybersecurity labs.
+SOC investigations, security alert triage, phishing analysis, SIEM log analysis, offensive-security labs and hands-on cybersecurity exercises.
 
 ## Platforms & Tools
 
@@ -63,6 +66,8 @@ SOC investigations, security alert triage, phishing analysis, SIEM log analysis 
 - PowerShell
 - Wireshark
 - VirtualBox
+- Metasploit Framework
+- Meterpreter
 - TryDetectMe
 - SIEM platforms
 
@@ -75,6 +80,7 @@ I am currently developing my skills through:
 - Networking and packet analysis
 - Windows and Active Directory
 - Security operations and defensive cybersecurity concepts
+- Offensive-security fundamentals to better understand attacker behaviour
 - Continued development of practical IT support skills
 
 ## Current Goals
@@ -86,5 +92,3 @@ I am particularly focused on building demonstrable experience through hands-on p
 ## Disclaimer
 
 All projects and labs in this portfolio are completed in controlled environments for educational purposes.
-
-
