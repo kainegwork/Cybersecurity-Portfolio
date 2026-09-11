@@ -1,4 +1,4 @@
-### Windows Active Directory Home Lab
+# Windows Active Directory Home Lab
 
 **Environment:** Windows Server running in VirtualBox
 **Domain Controller:** DC01
@@ -44,18 +44,12 @@ I also simulated an account lockout so I could practise identifying and resolvin
 
 This gave me practical experience with several common support tasks:
 
-- Creating and managing user accounts
-    
+- Creating and managing user accounts 
 - Organising users with OUs
-    
 - Resetting user passwords
-    
 - Identifying locked accounts
-    
 - Unlocking user accounts
-    
 - Verifying that the user could access the account again
-    
 
 These tasks helped reinforce how Active Directory is used in day-to-day IT support and user administration.
 ## DNS and Network Troubleshooting
@@ -73,15 +67,10 @@ After correcting the configuration and retesting, DNS resolution worked successf
 The main checks I used were:
 
 - Verify the server's IPv4 configuration
-    
 - Confirm the configured DNS server
-    
 - Test basic IP connectivity
-    
 - Test DNS resolution separately
-    
 - Retest after configuration changes
-    
 
 This reinforced the importance of separating network connectivity problems from DNS problems when troubleshooting domain environments.
 ## Windows 11 Client VM Troubleshooting
@@ -93,16 +82,11 @@ I reviewed the VirtualBox logs and identified an error relating to the system hy
 The troubleshooting included:
 
 - Reviewing VirtualBox logs for boot-related errors
-    
 - Investigating possible conflicts with the host hypervisor
-    
 - Disabling Windows security features such as Memory Integrity that could interfere with virtualisation
-    
 - Recreating and retesting the virtual machine
-    
 - Testing different firmware and security configurations
     
-
 Eventually, I found that disabling UEFI allowed the virtual machine to begin booting successfully.
 
 Although this provided a working initial boot, I recognised that disabling UEFI is not an ideal long-term configuration for a Windows 11 client. Further investigation is still required to identify the underlying compatibility issue and establish a cleaner solution.
