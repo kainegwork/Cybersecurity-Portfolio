@@ -1,7 +1,7 @@
 # Windows Active Directory Home Lab
 
-**Environment:** Windows Server running in VirtualBox
-**Domain Controller:** DC01
+**Environment:** Windows Server running in VirtualBox  
+**Domain Controller:** `DC01`  
 **Purpose:** Build a small business-style Active Directory environment to practise common IT support and system administration tasks.
 
 In this lab, I installed and configured Windows Server as a domain controller and created an Active Directory environment for practising common helpdesk and administration tasks.
@@ -9,7 +9,8 @@ In this lab, I installed and configured Windows Server as a domain controller an
 I configured the server's networking, installed Active Directory Domain Services and DNS, promoted the server to a domain controller, and then used Active Directory Users and Computers to create and manage organisational units and user accounts.
 
 The lab was designed to give me practical experience with tasks commonly encountered in IT support roles, including user account administration, password resets, organisational structure and domain connectivity.
-### Environment Setup
+
+## Environment Setup
 
 I created a Windows Server virtual machine in VirtualBox to act as the domain controller for the lab.
 
@@ -21,6 +22,7 @@ The server was configured with:
 - **Role:** Active Directory Domain Services and DNS
 
 Before installing Active Directory, I confirmed the server had a stable network configuration and could communicate correctly on the virtual network.
+
 ## Installing Active Directory Domain Services
 
 After configuring the Windows Server virtual machine, I installed the Active Directory Domain Services role so the server could be used as a domain controller.
@@ -28,6 +30,7 @@ After configuring the Windows Server virtual machine, I installed the Active Dir
 I then promoted the server to a domain controller and configured the environment so that Active Directory and DNS services were available on `DC01`.
 
 Once the domain controller was operational, I used Active Directory Users and Computers to begin creating and managing the directory structure.
+
 ## Creating Organisational Units and User Accounts
 
 Once the domain controller was operational, I used Active Directory Users and Computers to create a basic organisational structure for the lab.
@@ -44,7 +47,7 @@ I also simulated an account lockout so I could practise identifying and resolvin
 
 This gave me practical experience with several common support tasks:
 
-- Creating and managing user accounts 
+- Creating and managing user accounts
 - Organising users with OUs
 - Resetting user passwords
 - Identifying locked accounts
@@ -52,6 +55,7 @@ This gave me practical experience with several common support tasks:
 - Verifying that the user could access the account again
 
 These tasks helped reinforce how Active Directory is used in day-to-day IT support and user administration.
+
 ## DNS and Network Troubleshooting
 
 During the lab, I encountered a DNS resolution issue while configuring the domain environment.
@@ -73,6 +77,7 @@ The main checks I used were:
 - Retest after configuration changes
 
 This reinforced the importance of separating network connectivity problems from DNS problems when troubleshooting domain environments.
+
 ## Windows 11 Client VM Troubleshooting
 
 When I attempted to create a Windows 11 client virtual machine, the VM initially booted to a black screen and would not continue into the installer.
@@ -86,15 +91,15 @@ The troubleshooting included:
 - Disabling Windows security features such as Memory Integrity that could interfere with virtualisation
 - Recreating and retesting the virtual machine
 - Testing different firmware and security configurations
-    
+
 Eventually, I found that disabling UEFI allowed the virtual machine to begin booting successfully.
 
 Although this provided a working initial boot, I recognised that disabling UEFI is not an ideal long-term configuration for a Windows 11 client. Further investigation is still required to identify the underlying compatibility issue and establish a cleaner solution.
 
-### What I Learned
+## What I Learned
 
-This part of the lab reinforced the importance of using logs rather than making configuration changes at random.
+This lab gave me practical experience with both Active Directory administration and structured troubleshooting.
 
-The VirtualBox logs provided the first useful indication that the issue was related to virtualisation or firmware configuration, which helped narrow down the troubleshooting process.
+I practised common user-management tasks such as creating accounts, organising users into OUs, resetting passwords and resolving account lockouts. I also gained more experience troubleshooting DNS and virtualisation issues rather than treating every problem as a single-system failure.
 
-It also highlighted that a workaround is not always the same as a complete resolution. The VM was able to boot, but the underlying cause still needs to be understood and corrected.
+The Windows 11 VM issue reinforced the importance of using logs to guide troubleshooting rather than making configuration changes at random. It also highlighted that a workaround is not always the same as a complete resolution: the VM was able to boot, but the underlying cause still requires further investigation.
