@@ -1,6 +1,6 @@
 # Sample Helpdesk Tickets
 
-The following simulated support scenarios show how I approach troubleshooting, prioritisation and technical documentation.
+The following simulated and real-world support scenarios show how I approach troubleshooting, prioritisation and technical documentation.
 
 ---
 
@@ -16,10 +16,10 @@ The user says their computer is connected to Wi-Fi, but websites and online appl
 
 ### Information Gathered
 
-* The device is connected to Wi-Fi.
-* Other users can access the internet.
-* The problem started around 30 minutes earlier.
-* The user has not made any recent changes.
+- The device is connected to Wi-Fi.
+- Other users can access the internet.
+- The problem started around 30 minutes earlier.
+- The user has not made any recent changes.
 
 ### Troubleshooting
 
@@ -184,41 +184,57 @@ System performance was tested again, and the user confirmed that they could comp
 
 ---
 
-## Ticket 006 - Slow Internet Speed on Some Devices.
+## Ticket 006 — Slow Internet Speed on Some Devices
 
-**Priority:** P3 - Medium
+**Priority:** P3 — Medium
 
 ### Problem
-User reported that some devices on the home network were receiving significantly lower internet speeds than others.
+
+A user reported that some devices on the home network were receiving significantly lower internet speeds than others.
+
+### Information Gathered
+
+- All affected devices were connected to the same router.
+- Slower devices were receiving around 40 Mbps download speed.
+- Faster devices on the same connection were receiving more than 400 Mbps.
+- The slower devices appeared to be connected to the 2.4 GHz Wi-Fi band.
 
 ### Troubleshooting
-1. Confirmed that all devices were connected to the same network.
-2. Ran a speed test on the slower devices, result 40Mbps download speed.
-3. Ran a speed test on the faster devices, result 400+Mbps download speed.
-4. The slower devices appeared to be using the 2.4Ghz band, suggesting that these devices were not automatically connecting to the optimal band.
-5. Tried restarting the router to rule out a temporary network issue, this did not resolve the problem.
-6. Went into router settings and split the 2.4Ghz and 5Ghz bands onto separate networks so the user could manually select which band to use on which devices.
+
+1. Confirmed that all devices were connected to the same local network.
+2. Ran speed tests on the slower devices and recorded results of around 40 Mbps.
+3. Ran the same tests on faster devices and recorded results above 400 Mbps.
+4. Compared the wireless bands in use and identified that the slower devices were connected to 2.4 GHz.
+5. Restarted the router to rule out a temporary network issue; this did not resolve the problem.
+6. Separated the router's 2.4 GHz and 5 GHz bands into different network names so devices could be connected to a specific band.
+7. Connected the slower device to the 5 GHz network and repeated the speed test.
 
 ### Resolution
 
-Connecting the slower device to the 5Ghz network then gave download speeds of 400+Mbps similar to the other devices. User now has 2 networks so they can split devices based on their needs.
+After moving the slower device to the 5 GHz network, download speeds increased to more than 400 Mbps, in line with the other devices.
 
-**Lessons Learned:** Separating the wireless bands made it possible to identify which band each device was using and gave greater control over the network configuration. This reinforced the importance of testing individual network variables rather than assuming the router or internet connection was the cause.
+The user was left with separate 2.4 GHz and 5 GHz networks so devices could be assigned based on their range and performance requirements.
 
 ### Verification
 
-Another speed test ran on all devices, all around 400+Mbps download speed.
+Speed tests were repeated across the devices, with results of approximately 400 Mbps or higher on devices connected to the 5 GHz band.
+
+### Lessons Learned
+
+The internet connection itself was not the cause of the performance difference. Comparing devices and testing one variable at a time isolated the issue to wireless band selection.
+
+Separating the wireless bands also made it easier to verify which band each device was using and gave the user greater control over the network configuration.
 
 ---
-
 
 ## Lessons Learned
 
 These scenarios highlight the importance of:
 
-* Gathering information before making changes.
-* Following a structured troubleshooting process.
-* Considering business impact when setting priorities.
-* Recording findings clearly.
-* Confirming the outcome with the user.
-* Escalating issues that fall outside the technician's scope.
+- Gathering information before making changes
+- Following a structured troubleshooting process
+- Considering business impact when setting priorities
+- Testing one variable at a time
+- Recording findings clearly
+- Confirming the outcome with the user
+- Escalating issues that fall outside the technician's scope
