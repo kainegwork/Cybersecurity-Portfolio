@@ -1,123 +1,188 @@
-# Networking Core Protocols
+# Networking Fundamentals
+
+This section contains my networking notes and practical work covering core protocols, troubleshooting and packet analysis.
+
 ## OSI Model
 
-|Layer Number |Layer Name|Main Function|Example Protocols and Standards|
+| Layer | Name | Main Function | Examples |
 |---|---|---|---|
-|Layer 7 |	Application layer |	Providing services and interfaces to applications |	HTTP, FTP, DNS, POP3, SMTP, IMAP|
-|Layer 6 |	Presentation layer |	Data encoding, encryption, and compression |	Unicode, MIME, JPEG, PNG, MPEG|
-|Layer 5 |	Session layer |	Establishing, maintaining, and synchronising sessions |	NFS, RPC|
-|Layer 4 |	Transport layer |	End-to-end communication and data segmentation |	UDP, TCP|
-|Layer 3 |	Network layer |	Logical addressing and routing between networks |	IP, ICMP, IPSec|
-|Layer 2 |	Data link layer |	Reliable data transfer between adjacent nodes |	Ethernet (802.3), WiFi (802.11)|
-|Layer 1 |	Physical layer |	Physical data transmission media |	Electrical, optical, and wireless signals|
+| 7 | Application | Services and interfaces used by applications | HTTP, DNS, SMTP, IMAP |
+| 6 | Presentation | Data representation, encoding, encryption and compression | TLS-related data handling, JPEG, PNG |
+| 5 | Session | Establishing and managing communication sessions | RPC, NetBIOS session services |
+| 4 | Transport | End-to-end transport, segmentation and reliability | TCP, UDP |
+| 3 | Network | Logical addressing and routing between networks | IPv4, IPv6, ICMP |
+| 2 | Data Link | Local network frames and hardware addressing | Ethernet, Wi-Fi |
+| 1 | Physical | Transmission of raw bits over physical media | Copper, fibre, radio |
 
-### DHCP
+The OSI model is mainly useful to me as a troubleshooting framework. It provides a way to think about where a failure may be occurring rather than treating the network as one single system.
 
-### ARP (Address Resolution Protocol)
-Address Resolution Protocol (ARP) makes it possible to find the MAC address of another device on the Ethernet. 
-If we want to communicate via the data link layer, we can send an ARPRequest to the IP address of the device. The device will then send an ARPReply telling us the MAC address so we can communicate via the data link layer (Layer 2)
-ARP allows the translation from Layer 3 (IP) addressing to Layer 2 addressing.
+## DHCP
 
-### ICMP (Internet Control Message Protocol)
-ICMP is mainly used for network diagnostics and error reporting. Two popular commands rely on ICMP, namely ping and traceroute (Linux, tracert on Windows)
+**Dynamic Host Configuration Protocol (DHCP)** automatically provides devices with network configuration such as:
 
-### NAT (Network Address Translation)
-NAT was a proposed way to overcome the limits of IPv4 by using a public IP address to provide internet to many private IP addresses.
+- IP address
+- Subnet mask
+- Default gateway
+- DNS server
 
-### DNS
-Domain Name Sysytem (DNS) is partly responsible for mapping a domain name to an IP address. It works at Layer 7 of the OSI Model.
-A few examples of DNS records are:
-* A records
-* AAAA records (for IPv6)
-* CNAME records, which map domain names to other domain names
-* MX records used by mail servers.
+DHCP helps reduce manual configuration and prevents many address conflicts.
 
-**WHOIS** can be used to look up the domain owner and the creation date of any domain. **Note:** Some domains can be created through a service that will redact personal information from the WHOIS records.
+DHCP uses UDP, with servers normally listening on port 67 and clients using port 68.
 
-**HTTP** 
-Designed for retrieving web pages, what browser applications use.
-Relies on TCP and uses port 80 by default.
+## ARP
 
-**Telnet:** telnet <ipaddress> <port>
-Then use /GET /(filename) /HTTP/1.1
-Telnet's default is port 23.
+**Address Resolution Protocol (ARP)** is used on IPv4 Ethernet networks to discover the MAC address associated with an IP address on the local network.
 
-**FTP (File Transfer Protocol)**
-FTP is designed to transfer files.
-Example commands:
-    - USER to input the username.
-    - PASS to enter the password.
-    - RETR to download a file from the FTP server.
-    - STOR to upload a file to the FTP server.
-FTP servers listen to TCP port 21 by default.
+A device sends an ARP request asking which host owns an IPv4 address. The device using that address can then return an ARP reply containing its MAC address.
 
-Here is an example from a Tryhackme room of me downloading a file with FTP:
+This allows Layer 3 IPv4 addressing to be mapped to Layer 2 hardware addressing for local delivery.
+
+## ICMP
+
+**Internet Control Message Protocol (ICMP)** is used for network diagnostics and error reporting.
+
+Common tools that use ICMP include:
+
+- `ping`
+- `traceroute` on Linux
+- `tracert` on Windows
+
+## NAT
+
+**Network Address Translation (NAT)** translates addresses as traffic passes between networks.
+
+A common home-network use is allowing many devices with private IPv4 addresses to share one public IPv4 address when accessing the internet.
+
+## DNS
+
+**Domain Name System (DNS)** resolves names such as `example.com` to IP addresses and stores other information about domains.
+
+Common DNS record types include:
+
+- **A** — IPv4 address
+- **AAAA** — IPv6 address
+- **CNAME** — alias to another name
+- **MX** — mail server information
+
+DNS normally uses port 53. UDP is common for normal queries, while TCP is also used when required.
+
+## Common Application Protocols
+
+### HTTP and HTTPS
+
+**HTTP** is used to transfer web content and normally uses TCP port 80.
+
+**HTTPS** is HTTP protected by TLS and normally uses TCP port 443.
+
+### Telnet
+
+Telnet provides remote terminal access but does not encrypt traffic, making it unsuitable for normal secure administration.
+
+Its default TCP port is 23.
+
+### FTP
+
+**File Transfer Protocol (FTP)** is used to transfer files. Its control connection normally uses TCP port 21.
+
+Example FTP commands include:
+
+- `USER`
+- `PASS`
+- `RETR`
+- `STOR`
+
+Example from a TryHackMe lab:
+
 ![FTP login and file retrieval](images/ftp_anonymous_login.png)
 
-**SMTP (Simple Mail Transfer Protocol)**
-SMTP defines how a mail client talks to a mail server and how mail servers talk to each other.
-Example commands:
-    - HELO or EHLO initiates an SMTP session.
-    - MAIL FROM specifies the senders email address.
-    - RCPT TO specifies the recipients email address.
-    - DATA indicates that the client will begin sending the content of the email.
-    - . is sent by itself to show the end of the message.
-SMTP servers listen to TCP port 25 by default.
+### SMTP
 
-**POP3 (The Post Office Protocol version 3)**
-POP3 is designed to allow a mail client to communicate with a mail server and retrieve email messages.
-Commom commands:
-    - USER <username> identifies the user.
-    - PASS <password> gives the password.
-    - STAT requests the number of messages and the total size.
-    - LIST lists the messages and their sizes.
-    - RETR <message_number> gets a specific message.
-    - DELE <message_number> marks a message for deletion.
-    - QUIT ends the POP3 session applying changes, i.e. deletions.
-The POP3 server listen on port 110 by default.
+**Simple Mail Transfer Protocol (SMTP)** is used to send email between mail systems and from clients to mail servers.
+
+Common SMTP commands include:
+
+- `HELO` / `EHLO`
+- `MAIL FROM`
+- `RCPT TO`
+- `DATA`
+
+Traditional server-to-server SMTP uses TCP port 25.
+
+### POP3
+
+**Post Office Protocol version 3 (POP3)** is used by mail clients to retrieve messages from a mail server.
+
+Common commands include:
+
+- `USER`
+- `PASS`
+- `STAT`
+- `LIST`
+- `RETR`
+- `DELE`
+- `QUIT`
+
+POP3 normally uses TCP port 110.
 
 ![Example of using POP3 over Telnet to retrieve an email](images/pop3_telnet.png)
 
-### IMAP (Internet Message Access Protocol)
-IMAP allows sychronizing read, moved and deleted messages.
-A few example commands (slightly more complicated than POP3):
-    - LOGIN <username> <password> authenticates the user
-    - SELECT <mailbox> selects the mailbox folder to work with
-    - FETCH <mail_number> <data_item_name> Example fetch 3 body[] to fetch message number 3, header         and body.
-    - MOVE <sequence_set> <mailbox> moves the specified messages to another mailbox
-    - COPY <sequence_set> <data_item_name> copies the specified messages to another mailbox
-    - LOGOUT logs out
-IMAP server listens to Port 143 by default.
+### IMAP
 
-# Networking Secure Protocols
-The above protocols do not protect the confidentiality, integrity or authenticity of the data that is sent over them. **Transport Layer Security (TLS)** is added to existing protocols to protect the CIA triad.
+**Internet Message Access Protocol (IMAP)** allows email clients to work with messages stored on a mail server while keeping mailbox state synchronised.
 
-## TLS
-TLS allows secure communication between devices over an insecure network. 
-A server or client needs a signed TLS certificate to be trusted as secure.
+Common commands include:
 
-### HTTPS
-HTTPS works similarly to HTTP but a TLS session is established after the TCP three-way handshake.
-After this, all of the data in the packets appears as giberish if intercepted, unless you have the encryption key.
+- `LOGIN`
+- `SELECT`
+- `FETCH`
+- `MOVE`
+- `COPY`
+- `LOGOUT`
 
-### SMTPS, POP3S, IMAPS
-These all work in the same way as HTTPS did over TLS.
-|---|---|
-|**Protocol**|**Default Port Number**|
-|HTTPS|443|
-|SMTPS|465 or 587|
-|POP3S|995|
-|IMAPS|993|
+IMAP normally uses TCP port 143.
 
-## SSH
-Telnet is risky as all the traffic is sent in cleartext. 
-SSH offers confidentiality, integrity along with other benefits of having the traffic encrypted.
-Use the command ```bash ssh username@hostname ``` to connect to an SSH server. You will then be asked for a password, unless the server uses public-key authentication.
-The SSH server listens on port 22.
+## TLS and Secure Protocols
+
+**Transport Layer Security (TLS)** provides encryption, integrity and server authentication for many application protocols.
+
+Common secure service ports include:
+
+| Protocol | Typical Port |
+|---|---:|
+| HTTPS | 443 |
+| SMTP submission with STARTTLS | 587 |
+| SMTP with implicit TLS | 465 |
+| POP3S | 995 |
+| IMAPS | 993 |
+
+### SSH
+
+**Secure Shell (SSH)** provides encrypted remote command-line access and other secure services.
+
+SSH normally listens on TCP port 22.
+
+Example:
+
+```bash
+ssh username@hostname
+```
 
 ### SFTP
-SFTP or SSH File Transfer Protocol allows secure file transfer. It can be enabled in the OpenSSH server configuration and allows for commands such as ```bash get filename ``` and ```bash put filename ``` to download and upload files respectively.
 
-## VPN (Virtual Private Network)
-Can be used to connect devices in different locations as if they were physically located in the same place.
-All the internet traffic is sent from a VPN client to a VPN server, which then sends on the traffic from its IP address and back to the VPN client. This is why many people use VPN's for privacy and circumventing geographical restrictions.
+**SFTP** provides file transfer over SSH.
+
+Once connected, commands such as `get` and `put` can be used to download and upload files.
+
+## VPN
+
+A **Virtual Private Network (VPN)** creates an encrypted tunnel between a client and a VPN endpoint.
+
+VPNs can be used to provide secure remote access to organisational networks or protect traffic across untrusted networks.
+
+## Related Work
+
+- [Network Troubleshooting](Troubleshooting.md)
+- [Wireshark Basics](Wireshark-Basics.md)
+- [TCPdump Basics](Tcpdump-Basics.md)
+- [Nmap Basics](Nmap-Basics.md)
+- [Cryptography Basics](Cryptography-Basics.md)
