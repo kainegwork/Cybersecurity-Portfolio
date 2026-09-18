@@ -1,70 +1,142 @@
-# Linux
-Here I will show my understanding of basic command for the CLI in Linux.
+# Linux Fundamentals
 
-## Basic commands
+This section contains my Linux command-line notes and links to practical Linux projects in the portfolio.
+
+My main focus is using Linux for administration, troubleshooting, networking and security work rather than only memorising commands.
+
+## Basic Commands
+
+| Command | Purpose |
+|---|---|
+| `whoami` | Show the current user |
+| `pwd` | Show the current working directory |
+| `ls` | List files and directories |
+| `cd` | Change directory |
+| `cat` | Display file contents |
+| `find` | Search for files and directories |
+| `grep` | Search text for matching patterns |
+| `touch` | Create an empty file or update its timestamp |
+| `mkdir` | Create a directory |
+| `cp` | Copy files or directories |
+| `mv` | Move or rename files and directories |
+| `rm` | Remove files or directories |
+| `file` | Identify a file type |
+| `nano` | Edit text files in the terminal |
+| `wget` | Download files over supported network protocols |
+| `scp` | Copy files securely over SSH |
+| `ps` | Display process information |
+| `top` | Monitor processes and system resource usage |
+| `systemctl` | Inspect and manage systemd services |
+| `su` | Switch to another user account |
+| `fg` | Bring a backgrounded job to the foreground |
+
+## Useful Examples
+
+Search for a file:
+
 ```bash
-whoami # Tells you who you are on the system.
-echo # Terminal will output desired text.
-ls # Tells me what directories are around me.
-cd # Change directories
-cat # Prints the contents of a file in CLI
-pwd # Tells me where I am.
-find # Search for files by their name. e.g find -name example.txt
-grep # Look for text inside files. e.g grep "test" testscript.txt
-touch # Create file.
-mkdir # Create folder.
-cp # Copy file or folder.
-mv # Move file or folder.
-rm # Remove file or folder.
-file # Determine the file type.
-su # substitute user. need username and password.
-nano # edit files in CLI. e.g. nano testscript.txt
-fg # Bring a backgrounded process to the foreground.
-wget # download files from the web via HTTP.
-scp # copy files using the SSH protocol, between 2 computers. e.g. scp important.txt ubuntu@192.168.1.30:/home/ubuntu/transferred.txt
-python3
-  # python3 is used to create a HTTP server from a host to download files from a directory.
-  # e.g. python3 -m http.server will open a server in the current directory
-  # then use wget http://ip-address:port/filename on another terminal to download a file.
-ps and top
-  # These are used for viewing processes on our session or other users sessions. ps shows our session. ps aux shows all sessions.
-  # top shows real-time statistics about processes that are running.
-systemctl
-  # allows us to interact with the systemd process. Formatting: systemctl [option] [service]
-  # Options are: Start, Stop, Enable, Disable, Status.
-grep # used to find strings of text in documents.
+find . -name "example.txt"
 ```
-## Operators
-- & - Runs a command in the background, will not wait for completion before you can do anything else.
-- && - Run 2 commands, but waits for the first to finish before starting the second.
-- ">" - Sends the output somewhere else. e.g echo "test" > testscript will put test in the file testscript. NOTE: This will override anything already in the file.
-- ">>" - Adds the output to the bottom line of the file.
+
+Search inside a file:
+
+```bash
+grep "error" system.log
+```
+
+Copy a file to another machine over SSH:
+
+```bash
+scp important.txt ubuntu@192.168.1.30:/home/ubuntu/
+```
+
+Start a simple HTTP server from the current directory:
+
+```bash
+python3 -m http.server
+```
+
+## Operators and Redirection
+
+- `&` — run a command in the background.
+- `&&` — run the next command only if the first command succeeds.
+- `>` — redirect output and overwrite the destination file.
+- `>>` — append output to the destination file.
+- `|` — pass the output of one command into another command.
+
+Example:
+
+```bash
+grep -i "error" system.log | wc -l
+```
 
 ## Permissions
-Permissions are often shown as 'rwxrwxrwx', but these also have numeric values.
-- r - read - 4
-- w - write - 2
-- x - execute - 1
-To get the numeric value simply add the values for each group.
-'rwxrwxrwx' = '777'
-Many Linux commands use numeric values.
 
-## Directories
-- /etc - stores system files used by OS
-- /var - stores data that is frequesntly accessed or written. e.g. log files.
-- /root - the home directory for the root user.
-- /tmp - temprorary storage, reset on reboot.
+Linux permissions are commonly shown using `r`, `w` and `x`:
+
+- `r` — read — value 4
+- `w` — write — value 2
+- `x` — execute — value 1
+
+Permissions are applied separately to the file owner, group and others.
+
+For example:
+
+```text
+rwxr-xr-x = 755
+rw-r----- = 640
+```
+
+I have also practised permissions in a simulated shared-support-directory scenario using users, groups, ownership, `chmod`, `chown` and setgid.
+
+## Important Directories
+
+- `/etc` — system and application configuration files
+- `/var` — variable data such as logs, caches and service data
+- `/home` — normal user home directories
+- `/root` — root user's home directory
+- `/tmp` — temporary files
+
+## Processes and Services
+
+I use commands such as:
+
+```bash
+ps aux
+top
+systemctl status <service>
+systemctl start <service>
+systemctl stop <service>
+systemctl enable <service>
+```
+
+These are useful for investigating high resource usage, checking whether services are running and verifying service configuration.
 
 ## Backgrounding and Foregrounding
-We can background a process by following it with the & operator or by pressing Ctrl+Z
-We can then foreground the process again using fg
 
-## Scripting in shells
-A script is just a set of commands. It must have the extension .sh for bash scripts.
-Every script should start from shebang. Shebang is #! followed by the interpretor (bash,fish,etc).
-A script must have execution permissions, use chmod +x scriptname.
-use ./ before the script name to run it
-Loops and conditions can be used in scripts.
-Comment using '#' followed by text.
+A process can be started in the background by adding `&` to the command.
 
+`Ctrl+Z` suspends the current foreground job, and `fg` can bring a job back into the foreground.
 
+## Shell Scripting
+
+A Bash script is a text file containing shell commands. Scripts commonly begin with a shebang such as:
+
+```bash
+#!/bin/bash
+```
+
+The script needs execute permission before it can be run directly:
+
+```bash
+chmod +x script.sh
+./script.sh
+```
+
+## Practical Linux Projects
+
+- [External Linux Mint Workstation](External-Linux-Mint-Workstation/)
+- [Linux Network Troubleshooting](Linux-Network-Troubleshooting/)
+- [Linux Permissions Lab](Linux-Permissions-Lab/)
+- [Linux Process & Service Troubleshooting](Linux-Process-Service-Troubleshooting/)
+- [Linux SSH Authentication Investigation](Linux-SSH-Authentication-Investigation/)
