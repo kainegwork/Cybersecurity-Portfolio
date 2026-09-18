@@ -1,8 +1,8 @@
-\# Active Directory User Management and Account Lockout Lab
+# Active Directory User Management and Account Lockout Lab
 
 
 
-\## Overview
+## Overview
 
 
 
@@ -14,31 +14,30 @@ The goal was to simulate a realistic user onboarding and account support workflo
 
 
 
-\## Environment
+## Environment
 
 
 
-\- Windows Server 2025
+- Windows Server 2025
 
-\- Active Directory Domain Services
+- Active Directory Domain Services
 
-\- Domain: `kaine.lab`
+- Domain: `kaine.lab`
 
-\- Domain Controller: `DC01`
+- Domain Controller: `DC01`
 
-\- Windows 11 Pro client: `W11-CLIENT01`
+- Windows 11 Pro client: `W11-CLIENT01`
 
-\- Test user: `jcarter`
+- Test user: `jcarter`
 
-\- Security group: `Sales-Users`
-
-
-
-\## Tasks Completed
+- Security group: `Sales-Users`
 
 
 
-\### 1. Created a New Active Directory User
+## Tasks Completed
+
+
+### 1. Created a New Active Directory User
 
 
 
@@ -50,19 +49,19 @@ I created a new user called \*\*James Carter\*\* with the username:
 
 
 
-The account was placed inside the \*\*Sales OU\*\* to keep the directory organised by department.
+The account was placed inside the **Sales OU** to keep the directory organised by department.
 
 
 
-!\[James Carter in Sales OU](01-sales-ou-user.png)
+![James Carter in Sales OU](screenshots/01-sales-ou-user.png)
 
 
 
-\---
+---
 
 
 
-\### 2. Added the User to a Security Group
+### 2. Added the User to a Security Group
 
 
 
@@ -74,15 +73,15 @@ This demonstrated how group membership can be used to manage user access and per
 
 
 
-!\[Sales Users group membership](02-sales-users-membership.png)
+![Sales Users group membership](screenshots/02-sales-users-membership.png)
 
 
 
-\---
+---
 
 
 
-\### 3. Reset the User's Password
+### 3. Reset the User's Password
 
 
 
@@ -94,11 +93,11 @@ This is a common helpdesk task when onboarding users or responding to forgotten-
 
 
 
-\---
+---
 
 
 
-\### 4. Joined a Windows 11 Client to the Domain
+### 4. Joined a Windows 11 Client to the Domain
 
 
 
@@ -126,15 +125,14 @@ The workstation successfully joined the domain as:
 
 
 
-!\[Windows 11 client joined to domain](03-client-domain-join.png)
+![Windows 11 client joined to domain](acreenshots/03-client-domain-join.png)
 
 
 
-\---
+---
 
 
-
-\### 5. Logged In Using the Domain Account
+### 5. Logged In Using the Domain Account
 
 
 
@@ -194,15 +192,15 @@ This confirmed that the Windows 11 client was authenticating successfully agains
 
 
 
-!\[Domain authentication verification](04-domain-user-authentication.png)
+![Domain authentication verification](screenshots/04-domain-user-authentication.png)
 
 
 
-\---
+---
 
 
 
-\### 6. Tested the Account Lockout Policy
+### 6. Tested the Account Lockout Policy
 
 
 
@@ -218,15 +216,15 @@ The account was then locked and Windows displayed a message confirming that the 
 
 
 
-!\[Account lockout](05-account-lockout.png)
+![Account lockout](screenshtos/05-account-lockout.png)
 
 
 
-\---
+---
 
 
 
-\### 7. Unlocked the Account
+### 7. Unlocked the Account
 
 
 
@@ -242,43 +240,43 @@ I unlocked the account and then successfully logged back into the Windows 11 cli
 
 
 
-!\[Account unlock](06-account-unlock.png)
+![Account unlock](screenshots/06-account-unlock.png)
 
 
 
-\---
+---
 
 
 
-\## Skills Practised
+## Skills Practised
 
 
 
-\- Active Directory user creation
+- Active Directory user creation
 
-\- Organisational Unit management
+- Organisational Unit management
 
-\- Security group membership
+- Security group membership
 
-\- Password resets
+- Password resets
 
-\- Forced password changes
+- Forced password changes
 
-\- Windows domain joining
+- Windows domain joining
 
-\- Active Directory DNS configuration
+- Active Directory DNS configuration
 
-\- Domain authentication
+- Domain authentication
 
-\- Account lockout policies
+- Account lockout policies
 
-\- Unlocking user accounts
+- Unlocking user accounts
 
-\- Basic helpdesk troubleshooting
+- Basic helpdesk troubleshooting
 
 
 
-\## What I Learned
+## What I Learned
 
 
 
