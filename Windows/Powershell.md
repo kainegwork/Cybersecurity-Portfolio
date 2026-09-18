@@ -1,23 +1,122 @@
-# Powershell
-Commands in powershell are called cmdlets. They use a Verb-Noun naming convention to make them easy to understand.
-- Get-Command shows all cmdlets, functions, etc. avaliable in powershell.
-- Get-Help shows details of what a cmdlet does. The -examples appendix will give some general examples for the cmdlet.
-- Find-Module can be used to find modules online to download.
-- Install-Module is then used to install them.
-- ##Navigating File System
-- Get-ChildItem works in the same was as dir for the CLI. Get-ChildItem -Path <directory name> to specify a path.  - Set-Location will move you to another directory. Set-Location -path <directory name>.
-- New-Item is used to create directories OR files. New-Item -Path "path" -ItemType "itemtype".
-- Remove-Item, Copy-Item, Move-Item are all self explanatory based on above.
-- Get-Content works the same as type in CLI.
+# PowerShell Fundamentals
 
-# #Piping
-Piping (denoted by |) is used to pass the output of one cmdlet to another. This is especially powerful in powershell as it passes the objects instead of just text.
-- Where-Object can filter outputs that meet certain criteria.
-- ne: "not equal". This operator can be used to exclude objects from the results based on specified criteria.
-- gt: "greater than". This operator will filter only objects which exceed a specified value. It is important to note that this is a strict comparison, meaning that objects that are equal to the specified value will be excluded from the results.
-- ge: "greater than or equal to". This is the non-strict version of the previous operator. A combination of -gt and -eq.
-- lt: "less than". Like its counterpart, "greater than", this is a strict operator. It will include only objects which are strictly below a certain value.
--le: "less than or equal to". Just like its counterpart -ge, this is the non-strict version of the previous operator. A combination of -lt and -eq.
+PowerShell is a command-line shell and scripting environment widely used for Windows administration.
 
-- Select-Object can be used to refine the output of a search.
-- -Select-String is used for looking for specific text patterns in files similar to grep.
+PowerShell commands are called **cmdlets** and normally follow a `Verb-Noun` naming convention, such as `Get-Service` or `Set-Location`.
+
+## Discovering Commands
+
+### Get-Command
+
+Lists available cmdlets, functions and commands.
+
+```powershell
+Get-Command
+```
+
+### Get-Help
+
+Displays help for a cmdlet.
+
+```powershell
+Get-Help Get-Service
+Get-Help Get-Service -Examples
+```
+
+### Modules
+
+`Find-Module` can search for modules from configured repositories, while `Install-Module` installs a module.
+
+Changes to a system should only be made after confirming the source and purpose of the module.
+
+## Navigating the File System
+
+### Get-ChildItem
+
+Lists files and directories, similar to `dir`.
+
+```powershell
+Get-ChildItem
+Get-ChildItem -Path C:\Windows
+```
+
+### Set-Location
+
+Changes the current location.
+
+```powershell
+Set-Location -Path C:\Windows
+```
+
+### File Management
+
+Useful cmdlets include:
+
+- `New-Item`
+- `Remove-Item`
+- `Copy-Item`
+- `Move-Item`
+- `Get-Content`
+
+Example:
+
+```powershell
+New-Item -Path ".\notes.txt" -ItemType File
+Get-Content ".\notes.txt"
+```
+
+## PowerShell Pipeline
+
+The pipeline operator `|` passes objects from one command to another.
+
+This is one of the main differences between PowerShell and many traditional command shells: PowerShell normally passes structured objects rather than only plain text.
+
+Example:
+
+```powershell
+Get-Service | Where-Object Status -eq "Running"
+```
+
+## Filtering Objects
+
+`Where-Object` filters objects based on conditions.
+
+Common comparison operators include:
+
+| Operator | Meaning |
+|---|---|
+| `-eq` | Equal to |
+| `-ne` | Not equal to |
+| `-gt` | Greater than |
+| `-ge` | Greater than or equal to |
+| `-lt` | Less than |
+| `-le` | Less than or equal to |
+
+## Selecting Output
+
+`Select-Object` can choose specific properties from objects.
+
+```powershell
+Get-Process | Select-Object Name, Id, CPU
+```
+
+## Searching Text
+
+`Select-String` searches text for matching patterns and is similar in purpose to `grep`.
+
+```powershell
+Select-String -Path ".\system.log" -Pattern "error"
+```
+
+## Useful Administration Commands
+
+Examples I have used or studied include:
+
+```powershell
+Get-Process
+Get-Service
+Get-NetIPConfiguration
+Get-BitLockerVolume
+```
+
+These can help with process investigation, service troubleshooting, network configuration checks and verifying BitLocker status.
