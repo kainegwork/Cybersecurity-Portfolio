@@ -25,6 +25,9 @@ Investigated and triaged five security alerts in a simulated SOC environment. An
 ### [Windows Active Directory Home Lab](Windows/Active-Directory-Home-Lab/)
 Built and configured a Windows Server domain controller in VirtualBox using Active Directory Domain Services and DNS. Created OUs and user accounts, practised password resets and account lockout recovery, troubleshot DNS resolution, and investigated a Windows 11 client VM boot failure using VirtualBox logs.
 
+### [Windows Troubleshooting with Event Viewer](Windows-Troubleshooting/)
+Investigated Windows 11 warnings and errors using Event Viewer, PowerShell and Windows Services. Verified BitLocker status, checked Bluetooth and driver warnings, investigated a Service Control Manager timeout, and used current system state and user impact to decide whether remediation was actually required.
+
 ### [Metasploit Exploitation & Meterpreter Lab](Cybersecurity/Offensive-Security/Metasploit-Exploitation/)
 Used the Metasploit Framework in a controlled TryHackMe environment to generate and execute a Linux Meterpreter reverse TCP payload, configure a handler, establish a Meterpreter session and run a post-exploitation hashdump module. Troubleshot repeated session termination and identified the lab environment reset as the cause.
 
