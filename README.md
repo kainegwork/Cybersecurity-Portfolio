@@ -10,6 +10,7 @@ This portfolio documents my practical work, troubleshooting methodology and tech
 
 ## Technical Skills
 
+- **Microsoft 365 / Entra / Intune:** User and group administration, licensing, device enrollment, Win32 app deployment, compliance policies, Conditional Access, MFA, Windows Update rings and endpoint troubleshooting
 - **Linux:** Command line, file systems, permissions, users and groups, processes, services, SSH and network troubleshooting
 - **Windows:** Windows Server, Active Directory, AD DS, DNS, user and OU administration, command line, PowerShell fundamentals, NTFS permissions, User Account Control and troubleshooting
 - **Networking:** TCP/IP, IPv4/IPv6, DNS, DHCP, ARP, ICMP, routing and network troubleshooting
@@ -21,6 +22,9 @@ This portfolio documents my practical work, troubleshooting methodology and tech
 
 ### [Phishing SOC Simulator Investigation](Cybersecurity/SOC-Labs/Phishing-SOC-Simulator/)
 Investigated and triaged five security alerts in a simulated SOC environment. Analysed suspicious emails and SIEM logs, investigated URLs and IP addresses using TryDetectMe, distinguished true positives from false positives, and escalated suspicious activity based on the available evidence.
+
+### [Microsoft Entra ID & Intune Endpoint Management Lab](Microsoft-Entra/)
+Built a Microsoft 365 Business Premium lab environment and managed a Windows 11 endpoint using Microsoft Entra ID and Intune. Troubleshot MDM enrollment, packaged and deployed Win32 applications, analysed Intune Management Extension logs, configured device compliance and Conditional Access, demonstrated compliant-device access versus an unmanaged-device block, and deployed a pilot Windows Update ring.
 
 ### [Windows Active Directory Home Lab](Windows/Active-Directory-Home-Lab/)
 Built and configured a Windows Server domain controller in VirtualBox using Active Directory Domain Services and DNS. Created OUs and user accounts, practised password resets and account lockout recovery, troubleshot DNS resolution, and investigated a Windows 11 client VM boot failure using VirtualBox logs.
@@ -54,6 +58,9 @@ Networking fundamentals and practical work covering TCP/IP, DNS, DHCP, ARP, ICMP
 ### [Windows](Windows/)
 Windows Server, Active Directory, user administration, command-line tools, PowerShell and troubleshooting.
 
+### [Microsoft Entra ID & Intune](Microsoft-Entra/)
+Microsoft 365 administration, cloud identity, endpoint enrollment, Win32 application deployment, device compliance, Conditional Access and Windows Update management.
+
 ### [macOS](macOS/)
 Developing practical macOS support knowledge and troubleshooting procedures.
 
@@ -75,6 +82,9 @@ SOC investigations, security alert triage, phishing analysis, SIEM log analysis,
 - Meterpreter
 - TryDetectMe
 - SIEM platforms
+- Microsoft 365
+- Microsoft Entra ID
+- Microsoft Intune
 
 ## Current Learning
 
@@ -87,6 +97,7 @@ I am currently developing my skills through:
 - Security operations and defensive cybersecurity concepts
 - Offensive-security fundamentals to better understand attacker behaviour
 - Continued development of practical IT support skills
+- Microsoft cloud identity and endpoint management with Entra ID and Intune
 
 ## Current Goals
 
