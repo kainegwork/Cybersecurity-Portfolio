@@ -20,6 +20,9 @@ This portfolio documents my practical work, troubleshooting methodology and tech
 
 ## Featured Projects
 
+### [SecurityTriage PowerShell Tool](Cybersecurity/SOC-Labs/SecurityTriage/)
+Built a PowerShell-based Windows security triage tool that parses failed logons, process creation events and PowerShell Script Block Logging. The script extracts useful investigation context including source IPs, parent-child process relationships and command-line arguments, and uses keyword-based triage to surface PowerShell activity for further review.
+
 ### [Phishing SOC Simulator Investigation](Cybersecurity/SOC-Labs/Phishing-SOC-Simulator/)
 Investigated and triaged five security alerts in a simulated SOC environment. Analysed suspicious emails and SIEM logs, investigated URLs and IP addresses using TryDetectMe, distinguished true positives from false positives, and escalated suspicious activity based on the available evidence.
 
