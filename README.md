@@ -20,6 +20,9 @@ This portfolio documents my practical work, troubleshooting methodology and tech
 
 ## Featured Projects
 
+### [SQL Server IT Asset Management Database](SQL/IT-Asset-Management/)
+Built a fictional IT equipment inventory database in SQL Server 2025, using relational tables, primary and foreign keys, CHECK constraints, transactions, INNER/LEFT JOINs, and grouped inventory reports. Documented a safe sample-data setup and read-only practice queries.
+
 ### [SecurityTriage PowerShell Tool](Cybersecurity/SOC-Labs/SecurityTriage/)
 Built a PowerShell-based Windows security triage tool that parses failed logons, process creation events and PowerShell Script Block Logging. The script extracts useful investigation context including source IPs, parent-child process relationships and command-line arguments, and uses keyword-based triage to surface PowerShell activity for further review.
 
