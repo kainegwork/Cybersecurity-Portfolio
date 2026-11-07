@@ -20,6 +20,9 @@ This portfolio documents my practical work, troubleshooting methodology and tech
 
 ## Featured Projects
 
+### [FastAPI IT Asset Management API](Python/IT-Asset-API/)
+Built a Python/FastAPI learning project with GET, POST, PATCH and DELETE endpoints, custom Pydantic validation, and HTTP 404/409/422 error handling. Currently uses in-memory sample data; database persistence and automated testing are planned next.
+
 ### [SQL Server IT Asset Management Database](SQL/IT-Asset-Management/)
 Built a fictional IT equipment inventory database in SQL Server 2025, using relational tables, primary and foreign keys, CHECK constraints, transactions, INNER/LEFT JOINs, and grouped inventory reports. Documented a safe sample-data setup and read-only practice queries.
 
