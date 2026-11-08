@@ -20,6 +20,10 @@ This portfolio documents my practical work, troubleshooting methodology and tech
 
 ## Featured Projects
 
+### [SOC Investigation 001 — Suspected Session Hijacking](SOC-Investigations/INC-2026-001/)
+Worked through a fictional Microsoft 365 incident from a suspicious sign-in alert to endpoint investigation, containment and escalation. Analysed Entra ID authentication, PowerShell script logs, endpoint and network telemetry, and SharePoint audit records; documented an evidence timeline and MITRE ATT&CK mapping while separating confirmed findings from suspected session hijacking.
+
+
 ### [FastAPI IT Asset Management API](Python/IT-Asset-API/)
 Built a Python/FastAPI learning project with GET, POST, PATCH and DELETE endpoints, custom Pydantic validation, and HTTP 404/409/422 error handling. Currently uses in-memory sample data; database persistence and automated testing are planned next.
 
